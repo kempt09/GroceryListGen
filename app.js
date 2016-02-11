@@ -97,34 +97,35 @@
 			foodArray = [],
 			priceArray = [];
 
-
-		function displayStuff() {
-
-			foodArray.forEach(function (e) {
-				var foodList = document.getElementById('food'),
-					items = document.createElement('li');
-				foodList.appendChild(items);
-				items.innerHTML = e;
-
-			});
-
-			priceArray.forEach(function (e) {
-
-				var priceList = document.getElementById('price'),
-					items = document.createElement('li'),
-					total = document.getElementById('total');
-
-				totalPrice += e;
-				priceList.appendChild(items);
-				items.innerHTML = e;
-				total.innerHTML = totalPrice;
-
-			});
-		}
-
 		function pushToStack(pieceOfFood, cost) {
 			foodArray.push(pieceOfFood);
 			priceArray.push(cost);
+
+
+			function displayStuff() {
+
+				foodArray.forEach(function (e) {
+					var foodList = document.getElementById('food'),
+						items = document.createElement('li');
+					foodList.appendChild(items);
+					items.innerHTML = e;
+
+				});
+
+				priceArray.forEach(function (e) {
+
+					var priceList = document.getElementById('price'),
+						items = document.createElement('li'),
+						total = document.getElementById('total');
+
+					totalPrice += e;
+					priceList.appendChild(items);
+					items.innerHTML = e;
+					total.innerHTML = totalPrice;
+
+				});
+			}
+
 			displayStuff();
 		}
 
